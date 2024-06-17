@@ -7,7 +7,8 @@ def call(Map params) {
                 steps {
                     script {
                         env.REGION = "${params.region}"
-                        if (env.REGION == null){
+                        def REGION = System.getenv("REGION")
+                        if (REGION == null){
                             sh "echo error con la variable region"
                         }else{
                             sh "echo Region selecionada: $REGION"
