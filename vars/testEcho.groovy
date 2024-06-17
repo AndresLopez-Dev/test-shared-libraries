@@ -6,7 +6,7 @@ def call(Map params) {
             stage('test echo') {
                 steps {
                     script {
-                        sh "echo Hola mundo"
+                        sh "echo Hola ${params.name}"
                     }
                 }
             }
