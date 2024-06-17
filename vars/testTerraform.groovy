@@ -8,6 +8,8 @@ def call(Map params) {
                     script {
                         env.REGION = "${params.region}"
                         if (env.REGION == null){
+                            sh "echo error con la variable region"
+                        }else{
                             sh "echo Region selecionada: $REGION"
                         }
                         env.INSTANCE_TYPE = "${params.instance_type}"
