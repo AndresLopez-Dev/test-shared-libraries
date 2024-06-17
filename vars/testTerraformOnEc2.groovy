@@ -21,6 +21,7 @@ def call(Map params) {
     }
     dir("./test-terraform_EC2-sg"){
         sh "ls"
+        sh "touch ejemplo-variables.txt"
         sh "sudo echo region=us-east-1 \n access_key=AKIAUK22GESK63OE3UDQ \n secret_key=xxx \n vpc_cidr=172.31.0.0/16 \n instance_name=nginx-server \n instance_type=t2.micro \n ami_id=ami-08a0d1e16fc3f61ea \n enviroment=test \n owner='David 3htp' \n team=DevOps \n project='Aprendiendo terraform' >> ejemplo-variables.txt"
         sh "cat ejemplo-variables.txt"
         sh "ls"
