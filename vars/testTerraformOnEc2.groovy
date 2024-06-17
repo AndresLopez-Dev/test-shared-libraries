@@ -19,4 +19,7 @@ def call(Map params) {
         sh "echo Tipo de instancia selecionada: $INSTANCE_TYPE"
         sh "echo $instance_name $instance_type"
     }
+    dir("./test-terraform_EC2-sg"){
+        sh "ls"
+    }
 }
