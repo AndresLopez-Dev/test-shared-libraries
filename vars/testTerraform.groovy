@@ -7,7 +7,9 @@ def call(Map params) {
                 steps {
                     script {
                         env.REGION = "${params.region}"
-                        sh "echo Region selecionada: $REGION"
+                        if (env.REGION == null){
+                            sh "echo Region selecionada: $REGION"
+                        }
                         env.INSTANCE_TYPE = "${params.instance_type}"
                         sh "echo Tipo de instancia selecionada: $INSTANCE_TYPE"
                     }
