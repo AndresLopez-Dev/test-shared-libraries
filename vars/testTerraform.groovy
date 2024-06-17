@@ -6,7 +6,7 @@ def call(Map params) {
     if (region == null || instance_type == null){
         sh "error Error con la variable region"
     }else{
-        sh "echo Region selecionada: $REGION"
-        sh "echo Tipo de instancia selecionada: $INSTANCE_TYPE"
+        sh "echo Region selecionada: $region"
+        sh "echo Tipo de instancia selecionada: $instance_type"
     }
 }
