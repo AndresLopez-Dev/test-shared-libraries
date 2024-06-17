@@ -8,13 +8,15 @@ def call(Map params) {
                     script {
                         env.REGION = "${params.region}"
                         def REGION = System.getenv("REGION")
-                        if (REGION == null){
+                        env.INSTANCE_TYPE = "${params.instance_type}"
+                        def INSTANCE_TYPE = System.getenv("INSTANCE_TYPE")
+
+                        if (REGION == null && INSTANCE_TYPE == null){
                             sh "echo error con la variable region"
                         }else{
                             sh "echo Region selecionada: $REGION"
+                            sh "echo Tipo de instancia selecionada: $INSTANCE_TYPE"
                         }
-                        env.INSTANCE_TYPE = "${params.instance_type}"
-                        sh "echo Tipo de instancia selecionada: $INSTANCE_TYPE"
                     }
                 }
             }
