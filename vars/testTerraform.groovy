@@ -1,8 +1,7 @@
 def call(Map params) {
-    env.REGION = "${params.region}"
-    def region = params.region ?: env.REGION
-    env.INSTANCE_TYPE = "${params.instance_type}"
-    def instance_type = params.instance_type ?: env.INSTANCE_TYPE
+    def region = params.region ?: null
+    def instance_type = params.instance_type ?: null
+
 
     if (region == null || instance_type == null){
         sh "error Error con la variable region"
