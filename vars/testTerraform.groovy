@@ -6,8 +6,10 @@ def call(Map params) {
             stage('variables') {
                 steps {
                     script {
-                        env.REGION = "us-1"
-                        sh "echo Hola $REGION"
+                        env.REGION = "${params.region}"
+                        sh "echo Region selecionada: $REGION"
+                        env.INSTANCE_TYPE = "${params.instance_type}"
+                        sh "echo Tipo de instancia selecionada: $INSTANCE_TYPE"
                     }
                 }
             }
