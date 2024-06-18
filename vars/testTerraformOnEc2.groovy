@@ -25,7 +25,7 @@ def call(Map params) {
         // sh "terraform init"
         // sh "terraform plan"
         sh "touch ejemplo-variables.txt"
-        sh "echo \"region=$region \naccess_key=AKIAUK22GESK63OE3UDQ \nsecret_key=xxx \nvpc_cidr=172.31.0.0/16 \ninstance_name=nginx-server \ninstance_type=t2.micro\n ami_id=ami-08a0d1e16fc3f61ea\n enviroment=test\n owner='David 3htp'\n team=DevOps\n project='Aprendiendo terraform'\" > ejemplo-variables.txt"
+        sh "echo \"region=$region \naccess_key=$access_key \nsecret_key=$secret_key \nvpc_cidr=172.31.0.0/16 \ninstance_name=$instance_name\ninstance_type=$instance_type\n ami_id=$ami_id\n enviroment=$enviroment\n owner=$owner\n team=$team\n project=$project\" > ejemplo-variables.txt"
         // sh "cat ejemplo-variables.txt"
         sh "cat ejemplo-variables.txt"
         sh "ls"
