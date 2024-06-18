@@ -20,6 +20,17 @@ def call(Map params) {
         sh "echo $instance_name $instance_type"
         sh "pwd"
     }
+
+    def requiredParams = ['region', 'instance_type', 'access_key', 'secret_key', 'instance_name', 'ami_id', 'enviroment', 'owner', 'team', 'project']
+
+    def missingParams = requiredParams.findAll { param -> params."$it" == null }
+
+    if (!missingParams.isEmpty()) {
+    sh "Error: Missing required parameters: ${missingParams.join(', ')}"
+    // Handle missing parameters (e.g., error out, prompt user)
+    } 
+
+    
     dir("./test-terraform_EC2-sg"){
         sh "ls"
         // sh "terraform init"
